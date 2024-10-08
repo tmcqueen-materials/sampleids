@@ -163,10 +163,10 @@ def parse_internal(fragment, lab_ids, tool_ids, prov_ids, why='', file_props=Non
 
   if fix_lab_id(rn1[0]) == 'EXT':
     why += '_EXT'
-    # Special case external users
-    if len(rn1) >= 2:
-      why += '2'
-      return SampleID(lab_id='EXT', provenance_id=fix_provenance_id(rn1[1]), extra='_'.join(rn1[2:]), raw=fragment, confidence=CONFIDENCE.HIGH, why=why)
+    # Special case external samples
+    if len(rn1) >= 3:
+      why += '1'
+      return SampleID(lab_id='EXT', sample_id=fix_alphanum(rn1[2]), provenance_id=fix_provenance_id(rn1[1]), extra='_'.join(rn1[3:]), raw=fragment, confidence=CONFIDENCE.HIGH, why=why)
     why += '_DEFAULT'
     return SampleID(lab_id='EXT', raw=fragment, confidence=CONFIDENCE.LOW, why=why)
   if fix_lab_id(rn1[0]) == 'PDC':
