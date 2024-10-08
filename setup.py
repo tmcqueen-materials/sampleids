@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="sampleids",
-  version="0.0.2",
+  version="0.0.3dev0",
   license="GNU GPLv2",
   author="Tyrel M. McQueen",
   author_email="tmcqueen-pypi@demoivre.com",
