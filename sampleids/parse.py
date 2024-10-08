@@ -77,7 +77,7 @@ def is_alphanum(d):
     dn = fix_alphanum(d)
     if len(dn) > 2 and dn[0:2] == 'ND': # "Non-destructive" prefix
       dn = dn[2:]
-    if len(dn) > 2 or not dn.isalnum(): # we don't have more than 1295 (2 digits base 36) splits/samples per other unique constraints
+    if len(dn) > 6 or not dn.isalnum(): # we don't have more than 2176782336 (6 digits base 36) splits/samples/measurements per other unique constraints
       return False
     return True
   except:
